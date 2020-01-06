@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<title>GPIO Control</title>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			.btn{
+				height: 80px;
+				width: 100px;
+				font-size:18px;
+				background-color: green;
+			}
+			.btn_stop{
+				height: 80px;
+				width: 100px;
+				font-size:18px;
+				background-color: red;
+			}
+			.cell{
+				height: 80px;
+				width: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Control Car</h2>
+		<table border="0" cellspacing="8" cellpadding="8">
+			<tr>
+				<td class="cell"></td>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="mauto()">Auto</button></td>
+				<td class="cell"></td>
+			</tr>
+		　	<tr>
+				<td class="cell"></td>
+			　  <td class="cell"><button class="btn" type="button" id="mstate" onclick="mforward()">Forward</button></td>
+				<td class="cell"></td>
+		　	</tr>
+			<tr>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="carleft()" >Left</button></td>
+				<td class="cell"><button class="btn_stop" type="button" id="mstate" onclick="mstop()" >Stop</button></td>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="carright()" >Right</button></td>
+		　	</tr>
+			<tr>
+				<td class="cell"></td>
+			　  <td class="cell"><button class="btn" type="button" id="mstate" onclick="mbackward()">Backward</button></td>
+				<td class="cell"></td>
+			</tr>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+			<script>
+				var socket = io.connect(); //load socket.io-client and connect to the host
+				function mstop() {
+					socket.emit("mstate", 0); //send button state to server
+				}
+				
+				function mforward() {
+					socket.emit("mstate", 1); //send button state to server
+				}
+				
+				function carleft() {
+					socket.emit("mstate", 2); //send button state to server
+				}
+				
+				function carright() {
+					socket.emit("mstate", 3); //send button state to server
+				}
+				
+				function mbackward() {
+					socket.emit("mstate", 4); //send button state to server
+				}
+				
+				function mauto() {
+					socket.emit("mstate", 5); //send button state to server
+				}
+			</script>
+		</table>
+	</body>
+</html>
