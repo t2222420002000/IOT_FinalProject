@@ -1,5 +1,5 @@
 # IOT_FinalProject: 遙控逗貓車
-可藉由網頁控制車子來達成遠端逗貓的功能，車子提供前進、後退、左轉、右轉等方向控制，以及遇到障礙物會自動停下來，避免撞傷您的愛貓！
+可藉由網頁控制車子來達成遠端逗貓的功能，車子提供前進、後退、左轉、右轉等方向控制，以及遇到障礙物會自動停下來，避免撞傷您的愛貓！在自動模式下則會避開障礙物繼續行駛。
 
 所需材料：  
  * 樹莓派 * 1  
@@ -13,7 +13,7 @@
  * 杜邦線 約22條  
  * 絕緣膠帶 * 1捲   
 
-## 步驟一：安裝Node.js和onoff、socket.io套件
+## 步驟一：在樹莓派上安裝Node.js和onoff、socket.io套件
 參考連結: https://maker.pro/raspberry-pi/tutorial/how-to-control-a-raspberry-pi-gpio-pin-with-a-nodejs-web-server  
 
 1. 先更新你的樹莓派
@@ -65,7 +65,90 @@ npm install socket.io --save
 共有兩支檔案，一支為顯示在網頁上的.html檔，一支為在server端執行的.js檔
 
 ### index.html
-內建有5個按鈕，分別為控制前進、左轉、右轉、後退、停車等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作。
+內建有6個按鈕，分別為控制前進、左轉、右轉、後退、停車、自動模式等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作。
+
+```html
+<!DOCTYPE html>
+<html>
+	<title>GPIO Control</title>
+	<head>
+		<meta charset="utf-8">
+  <!--定義按鈕樣式-->
+		<style>
+			.btn{
+				height: 80px;
+				width: 100px;
+				font-size:18px;
+				background-color: green;
+			}
+			.btn_stop{
+				height: 80px;
+				width: 100px;
+				font-size:18px;
+				background-color: red;
+			}
+			.cell{
+				height: 80px;
+				width: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Control Car</h2>
+  <!--控制車子的按鈕-->
+		<table border="0" cellspacing="8" cellpadding="8">
+			<tr>
+				<td class="cell"></td>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="mauto()">Auto</button></td>
+				<td class="cell"></td>
+			</tr>
+		　	<tr>
+				<td class="cell"></td>
+			　  <td class="cell"><button class="btn" type="button" id="mstate" onclick="mforward()">Forward</button></td>
+				<td class="cell"></td>
+		　	</tr>
+			<tr>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="carleft()" >Left</button></td>
+				<td class="cell"><button class="btn_stop" type="button" id="mstate" onclick="mstop()" >Stop</button></td>
+				<td class="cell"><button class="btn" type="button" id="mstate" onclick="carright()" >Right</button></td>
+		　	</tr>
+			<tr>
+				<td class="cell"></td>
+			　  <td class="cell"><button class="btn" type="button" id="mstate" onclick="mbackward()">Backward</button></td>
+				<td class="cell"></td>
+			</tr>
+   <!--按下按鈕後傳出對應的狀態的websocket給server-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+			<script>
+				var socket = io.connect(); //load socket.io-client and connect to the host
+				function mstop() {
+					socket.emit("mstate", 0); //send button state to server
+				}
+				
+				function mforward() {
+					socket.emit("mstate", 1); //send button state to server
+				}
+				
+				function carleft() {
+					socket.emit("mstate", 2); //send button state to server
+				}
+				
+				function carright() {
+					socket.emit("mstate", 3); //send button state to server
+				}
+				
+				function mbackward() {
+					socket.emit("mstate", 4); //send button state to server
+				}
+				
+				function mauto() {
+					socket.emit("mstate", 5); //send button state to server
+				}
+			</script>
+		</table>
+	</body>
+</html>
+```
 
 ### webserver.js
 在server端監聽websocket，使用onoff套件控制GPIO，達到控制輪子的轉動使車子前進後退轉彎；以及控制超音波測距模組進行測量距離，達到避障的功能。
