@@ -1,4 +1,6 @@
 # IOT_FinalProject: 遙控逗貓車
+![image](https://github.com/t2222420002000/IOT_FinalProject/blob/master/Catcar.jpg)
+
 可藉由網頁控制車子來達成遠端逗貓的功能，車子提供前進、後退、左轉、右轉等方向控制，以及遇到障礙物會自動停下來，避免撞傷您的愛貓！在自動模式下則會避開障礙物繼續行駛。
 
 Demo影片:  https://youtu.be/_Fmwv50jBPg  
