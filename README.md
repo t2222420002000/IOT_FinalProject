@@ -54,15 +54,19 @@ npm install socket.io --save
 在server端監聽websocket，使用onoff套件控制GPIO，達到控制輪子的轉動使車子前進後退轉彎；以及控制超音波測距模組進行測量距離，達到避障的功能。
 
 ## 步驟三：連接電路
+樹莓派GPIO說明
+ * 請參考: https://pinout.xyz/  
+ 
 需要連接的零件有以下:
 
-1.減速馬達連接L298N馬達控制模組，在接上樹莓派  
- * 請參考: https://www.youtube.com/watch?v=bF1XDjpLork  
- * 請參考: https://www.youtube.com/watch?v=7vTl9kosZDc  
+ 1.減速馬達連接L298N馬達控制模組，在接上樹莓派  
+  * 請參考: https://www.youtube.com/watch?v=bF1XDjpLork  
+  * 請參考: https://www.youtube.com/watch?v=7vTl9kosZDc  
 
-2.L298N馬達控制模組連接樹莓派
- * 參考: 
-
+ 2.US-100超音波測距模組連接樹莓派
+  * 請參考: https://atceiling.blogspot.com/2014/03/raspberry-pi_18.html  
+ 
+一共使用樹莓派GPIO
 
 
 
