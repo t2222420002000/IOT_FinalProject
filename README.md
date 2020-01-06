@@ -44,16 +44,7 @@ npm install onoff
 npm install socket.io --save
 ```
 
-## 步驟二：建立控制車子的網頁檔案
-共有兩支檔案，一支為顯示在網頁上的.html檔，一支為在server端執行的.js檔
-
-### index.html
-內建有5個按鈕，分別為控制前進、左轉、右轉、後退、停車等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作。
-
-### webserver.js
-在server端監聽websocket，使用onoff套件控制GPIO，達到控制輪子的轉動使車子前進後退轉彎；以及控制超音波測距模組進行測量距離，達到避障的功能。
-
-## 步驟三：連接電路
+## 步驟二：連接電路
 樹莓派GPIO說明
  * 請參考: https://pinout.xyz/  
  
@@ -70,7 +61,14 @@ npm install socket.io --save
  
 一共使用樹莓派GPIO上的10個Pin，3個Ground，1個3.3V Power輸出。
 
+## 步驟三：建立控制車子的網頁檔案
+共有兩支檔案，一支為顯示在網頁上的.html檔，一支為在server端執行的.js檔
 
+### index.html
+內建有5個按鈕，分別為控制前進、左轉、右轉、後退、停車等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作。
+
+### webserver.js
+在server端監聽websocket，使用onoff套件控制GPIO，達到控制輪子的轉動使車子前進後退轉彎；以及控制超音波測距模組進行測量距離，達到避障的功能。
 
 
 
