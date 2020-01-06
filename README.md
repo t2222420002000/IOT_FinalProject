@@ -73,7 +73,7 @@ npm install socket.io --save
 	<title>GPIO Control</title>
 	<head>
 		<meta charset="utf-8">
-  <!--定義按鈕樣式-->
+ 		 <!--定義按鈕樣式-->
 		<style>
 			.btn{
 				height: 80px;
@@ -95,7 +95,7 @@ npm install socket.io --save
 	</head>
 	<body>
 		<h2>Control Car</h2>
-  <!--控制車子的按鈕-->
+  		<!--控制車子的按鈕-->
 		<table border="0" cellspacing="8" cellpadding="8">
 			<tr>
 				<td class="cell"></td>
@@ -117,7 +117,7 @@ npm install socket.io --save
 			　  <td class="cell"><button class="btn" type="button" id="mstate" onclick="mbackward()">Backward</button></td>
 				<td class="cell"></td>
 			</tr>
-   <!--按下按鈕後傳出對應的狀態的websocket給server-->
+   			<!--按下按鈕後傳出對應的狀態的websocket給server-->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 			<script>
 				var socket = io.connect(); //load socket.io-client and connect to the host
