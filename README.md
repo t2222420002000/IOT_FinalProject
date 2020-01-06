@@ -344,8 +344,10 @@ function distance_auto(){ //Calculate Distance for auto mode
 	}
 	var d_time = stoptime - starttime ;
 	d =  (d_time * 34 / 2 );
-	if(d < 150){
+	if(d < 200){
 		console.log("Need turn!");
+		if(left){clearTimeout(leftID);}
+		if(right){clearTimeout(rightID);}
 		var i = getRandomInt(1);
 		if  (i == 0){
 			mleft();
@@ -361,7 +363,7 @@ function getRandomInt(max) { //Generate random number
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function mauto(){
+function mauto(){ // auto mode
 	auto = true;
 	mforward();
 }
