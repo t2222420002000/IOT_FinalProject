@@ -48,7 +48,7 @@ npm install socket.io --save
 共有兩支檔案，一支為顯示在網頁上的.html檔，一支為在server端執行的.js檔
 
 ### index.html
-內建有5個按鈕，分別為控制前進、左轉、右轉、後退、停車等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作！
+內建有5個按鈕，分別為控制前進、左轉、右轉、後退、停車等功能，當使用者在網頁上按按鈕，會傳送websocket到樹莓派上的server，使車子做出對應的動作。
 
 ### webserver.js
 在server端監聽websocket，使用onoff套件控制GPIO，達到控制輪子的轉動使車子前進後退轉彎；以及控制超音波測距模組進行測量距離，達到避障的功能。
@@ -62,11 +62,13 @@ npm install socket.io --save
  1.減速馬達連接L298N馬達控制模組，在接上樹莓派  
   * 請參考: https://www.youtube.com/watch?v=bF1XDjpLork  
   * 請參考: https://www.youtube.com/watch?v=7vTl9kosZDc  
+  * 2個L298N共使用樹莓派8個Pin，分別為BCM 17,18,20,21,22,23,24,25，以及2個Ground。
 
  2.US-100超音波測距模組連接樹莓派
-  * 請參考: https://atceiling.blogspot.com/2014/03/raspberry-pi_18.html  
+  * 請參考: https://atceiling.blogspot.com/2014/03/raspberry-pi_18.html
+  * US-100超音波測距模組共使用樹莓派2個Pin，分別為BCM 6,26，以及1個Ground，1個3.3V Power輸出。
  
-一共使用樹莓派GPIO
+一共使用樹莓派GPIO上的10個Pin，3個Ground，1個3.3V Power輸出。
 
 
 
