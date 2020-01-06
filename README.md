@@ -13,7 +13,8 @@ Demo影片:  https://youtu.be/_Fmwv50jBPg
  * 樹莓派 UPS 鋰電池擴充板 USB 電源供應模組 * 1  
  * 市售四驅四輪智慧小車底盤 * 1（內含減速馬達 * 4 輪子 * 4）  
  * 杜邦線 約22條  
- * 絕緣膠帶 * 1捲   
+ * 絕緣膠帶 * 1捲 
+ * 逗貓玩具 * 1
 
 ## 步驟一：在樹莓派上安裝Node.js和onoff、socket.io套件
 參考連結: https://maker.pro/raspberry-pi/tutorial/how-to-control-a-raspberry-pi-gpio-pin-with-a-nodejs-web-server  
