@@ -29,10 +29,14 @@ Demo影片:  https://youtu.be/_Fmwv50jBPg
 
 4.安裝Raspbian
   * 安裝完成的畫面如下
+  * ![image](https://github.com/t2222420002000/IOT_FinalProject/blob/master/image/Raspbian.jpg)
 
 ## 前置準備-啟用VNC遠端到樹莓派上
 
-1.
+1.打開樹莓派上的VNC Server設定
+  * raspberry icon -> Preferences -> Raspberry Pi Configuration
+  * 選擇Interfaces，將VNC狀態改為Enable
+  * 更改完之後可以看見畫面右上角多了VNC的圖示
 
 
 
