@@ -43,6 +43,7 @@ Demo影片:  https://youtu.be/_Fmwv50jBPg
   * 在自己電腦上到VNC的官網註冊一個帳戶
   * 官網: https://www.realvnc.com/en/
   * 一樣在官網下載VNC Viewer，並安裝在自己電腦上
+  * 載點: https://www.realvnc.com/en/connect/download/viewer/
   
 3.回到樹莓派上點選VNC圖示，登入你剛剛申請的帳戶，並將樹莓派加入的你的team
   ```
