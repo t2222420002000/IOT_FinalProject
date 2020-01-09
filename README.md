@@ -17,6 +17,25 @@ Demo影片:  https://youtu.be/_Fmwv50jBPg
  * 杜邦線 約22條  
  * 絕緣膠帶 * 1捲 
  * 逗貓玩具 * 1
+ 
+## 前置準備-在樹莓派上安裝作業系統
+
+1.先至官網下載作業系統，本專案下載的是NOOBS
+  * 下載連結:  https://www.raspberrypi.org/downloads/
+  
+2.下載完成後在你的電腦上解壓縮檔案，並將裡面的檔案移至要裝在樹莓派上的SD卡
+
+3.將樹莓派接上電源，啟動樹莓派
+
+4.安裝Raspbian
+  * 安裝完成的畫面如下
+
+## 前置準備-啟用VNC遠端到樹莓派上
+
+1.
+
+
+
 
 ## 步驟一：在樹莓派上安裝Node.js和onoff、socket.io套件
 參考連結: https://maker.pro/raspberry-pi/tutorial/how-to-control-a-raspberry-pi-gpio-pin-with-a-nodejs-web-server  
