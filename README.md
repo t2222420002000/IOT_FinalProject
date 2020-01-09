@@ -37,9 +37,20 @@ Demo影片:  https://youtu.be/_Fmwv50jBPg
   * raspberry icon -> Preferences -> Raspberry Pi Configuration
   * 選擇Interfaces，將VNC狀態改為Enable
   * 更改完之後可以看見畫面右上角多了VNC的圖示
+  * ![image](https://github.com/t2222420002000/IOT_FinalProject/blob/master/image/VNC_ICON.JPG)
 
+2.註冊VNC帳戶
+  * 在自己電腦上到VNC的官網註冊一個帳戶
+  * 官網: https://www.realvnc.com/en/
+  * 一樣在官網下載VNC viewer，並安裝在自己電腦上
+  
+3.回到樹莓派上點選VNC圖示，登入你剛剛申請的帳戶，並將樹莓派加入的你的team
+  * 注意！這個步驟進行的時候要確保你的樹莓派有連上網路
 
+4.打開你電腦上的VNC Viewer，登入之後你就可以看見你的樹莓派已經在你的裡面了
 
+5.在VNC Viewer點擊兩下樹莓派圖示，就可以連線到你的樹莓派了
+ * 注意！你的樹莓派和你的電腦要連上同一個WIFI，才會遠端連線成功
 
 ## 步驟一：在樹莓派上安裝Node.js和onoff、socket.io套件
 參考連結: https://maker.pro/raspberry-pi/tutorial/how-to-control-a-raspberry-pi-gpio-pin-with-a-nodejs-web-server  
